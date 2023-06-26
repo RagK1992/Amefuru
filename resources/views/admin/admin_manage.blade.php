@@ -65,9 +65,10 @@
                     <td>{{ $article->article_title }}</td>
                     <td class="option"><a href=" {{ route('articleEdit', ['article_id' => $article['article_id']]) }}">編集</a></td>
                     <td>
-                        <form action="" method="POST">
-                            <button class="option-delete" type="submit" onclick="">削除</button>
-                            <input type="hidden" name="delete" value="">
+                        <form action="{{ route('articleDelete') }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
+                            @csrf
+                            <input type="hidden" name="article_id" value="{{ $article->article_id }}">
+                            <button class="option-delete" type="submit">削除</button>
                         </form>
                     </td>
                 </tr>

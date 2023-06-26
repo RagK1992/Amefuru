@@ -32,7 +32,7 @@
                 @if ($errors->has('article_description'))
                 <p class="error-message">{{ $errors->first('article_description') }}</p>
                 @endif
-                <textarea name="article_description" placeholder="" rows="5" cols="50">{!! ($article['article_description']) !!}</textarea>
+                <textarea name="article_description" placeholder="" rows="5" cols="50">{{ str_replace('<br />', '', $article['article_description']) }}</textarea>
             </div>
 
             <div class="form-item">

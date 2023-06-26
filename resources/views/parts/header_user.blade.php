@@ -14,8 +14,8 @@
 <!-- ヘッダー(ログイン後) -->
 <nav class="header-nav">
     <ul class="header-menu main-menu">
-        <li><a class="menu-btn btn--yellow btn--border-dashed" href="#content-main">クーポン</a></li>
-        <li><a class="menu-btn btn--yellow btn--border-dashed" href="#content-sub">施設情報・コラム</a></li>
+        <li><a class="menu-btn btn--yellow btn--border-dashed" href="{{route('main')}}">クーポン</a></li>
+        <li><a class="menu-btn btn--yellow btn--border-dashed" href="{{route('main', ['tag' => 'articles'])}}">施設情報・コラム</a></li>
         <li><a class="menu-btn btn--yellow btn--border-dashed" href="{{route('mypage')}}">マイページ</a></li>
         <li>
             <form action="{{route('logoutUser')}}" method="POST">
